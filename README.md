@@ -15,7 +15,8 @@ $$/   $$/  $$$$$$/     $$$$/  $$/   $$/  $$$$$$$/ $$/   $$/    $$$$/  $$/  $$$$$
 
 # authentic v1.0
 
-OAuth 2.0 Authorization Server implementations with Spring Boot platform, with management for Applications, Users and Token services with RDBMS and compatible with Spring Cloud Security oauth using Json Web Tokens (JWT).
+OAuth 2.0 Authorization Server implementation with Spring Boot, including management for Applications, Users and Token services (JWT format).
+Compatible with Spring Cloud Security and MySQL RDBMS.
 
 Features
 - Token Service for grant type client_credentials, password, refresh_token and authorization_code
