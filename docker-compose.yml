@@ -1,0 +1,39 @@
+version: '2.1'
+services:
+  db:
+    container_name: mysql
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: 'auth'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: '123456'
+      MYSQL_ROOT_PASSWORD: '123456'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - authentic
+    volumes:
+      - ./docker:/etc/mysql/mysql.conf.d
+  webserver:
+    container_name: authentic
+    image: authentic
+    restart: unless-stopped
+    environment:
+      - "MYSQL_HOST=172.17.0.1"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASS=123456"
+    ports:
+      - '8085:8085'
+    expose:
+      - '8085'
+    networks:
+      - authentic
+    depends_on:
+      - "db"
+networks:
+  authentic:
+    driver: bridge
+
