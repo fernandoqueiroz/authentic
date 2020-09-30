@@ -21,8 +21,8 @@ Compatible with Spring Cloud Security and MySQL RDBMS.
 Features
 - Token Service for grant type client_credentials, password, refresh_token and authorization_code
 - Services for management Applications
-- Services for management Users
-- Services for management Tokens with introspect and token_keys
+- Services for management Users (*Partial)
+- Services for management Tokens with introspect and token_keys (*Partial)
 - Automatic database creation scripts for MySQL
 
 # contribute
