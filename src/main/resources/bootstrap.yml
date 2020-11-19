@@ -24,3 +24,15 @@ logging:
   level:
     org.springframework.security: debug
     "liquibase" : info
+
+security:
+  authserver:
+    hostname: http://localhost:8085
+  oauth2:
+    resource:
+      jwt:
+        key-uri: ${security.authserver.hostname}/oauth/token_key
+      id: resources
+    client:
+      client-secret: secret
+      client-id: client
